@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Ninjas from './components/Ninjas';
+import AddNinja from './components/AddNinja';
 
 class App extends Component {
   state = {
@@ -18,6 +19,10 @@ class App extends Component {
       <div className="App">
         <div>
           <Ninjas ninjas = {this.state.ninjas} />
+
+          <p>----------------</p>
+          <AddNinja />
+
         </div>
       </div>
     )

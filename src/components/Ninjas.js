@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 const Ninjas = (props) => {
 
         // const ninjas = this.props.ninjas;
-        const { ninjas } = props; // no THIS in here
+        const {ninjas} = props; // no THIS in here
         
         const ninjaList = ninjas.map(item => {
             return (
