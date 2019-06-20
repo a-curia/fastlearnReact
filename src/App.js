@@ -14,6 +14,18 @@ class App extends Component {
     ]
   }
 
+  addNinjaToState = (ninja) => {
+    ninja.id = Math.random();
+    
+    let ninjas = [...this.state.ninjas, ninja]; // the spread operator - copy into new array
+
+    this.setState({
+      ninjas: ninjas
+    })
+    
+    console.log(ninja);
+  }
+
   render() {
     return (
       <div className="App">
@@ -21,7 +33,7 @@ class App extends Component {
           <Ninjas ninjas = {this.state.ninjas} />
 
           <p>----------------</p>
-          <AddNinja />
+          <AddNinja addNinja = {this.addNinjaToState} />
 
         </div>
       </div>
