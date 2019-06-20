@@ -1,17 +1,27 @@
-import React from 'react';
+import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Ninjas from './components/Ninjas';
 
-function App() {
-  return (
-    <div className="App">
-      <div>
-        <Ninjas name="Adi" age="22" belt="red" />
-        <Ninjas name="Acu" age="43" belt="blue" />
+class App extends Component {
+  state = {
+    ninjas: [
+      {id:1, name:'Ryu', age:22, belt: 'red'},
+      {id:2, name:'Aku', age:24, belt: 'black'},
+      {id:3, name:'Kumy', age:34, belt: 'blue'},
+      {id:4, name:'Kajy', age:54, belt: 'green'}
+    ]
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <div>
+          <Ninjas ninjas = {this.state.ninjas} />
+        </div>
       </div>
-    </div>
-  );
+    )
+  }
 }
 
 export default App;

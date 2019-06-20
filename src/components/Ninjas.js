@@ -9,25 +9,26 @@ class Ninjas extends Component {
 
     render() {
 
-        console.log(this.props);
+        const ninjas = this.props.ninjas;
 
         // destructuring
-        const { name, age, belt } = this.props;
+        // const { ninjas } = this.props;
+        
+        const ninjaList = ninjas.map(item => {
+            return (
+                <div className="ninja" key={item.id} >
+                    <div>Name: {item.name}</div>
+                    <div>Age: {item.age}</div>
+                    <div>Belt: {item.belt}</div>
+                </div>
+            )
+        })
 
         return (
-            <div className="ninja">
-                <div>Name: {this.state.name}</div>
-                <div>Age: {this.state.age}</div>
-                <div>Belt: {this.state.belt}</div>
-                ------------
-                <div>Name: {this.props.name}</div>
-                <div>Age: {this.props.age}</div>
-                <div>Belt: {this.props.belt}</div>
-                ------------
-                <div>Name: {name}</div>
-                <div>Age: {age}</div>
-                <div>Belt: {belt}</div>
 
+            
+            <div className="ninja-list">
+                {ninjaList}
             </div>
         )
     }
